@@ -1,5 +1,9 @@
 def backtracking(puzzle):
+    explored_nodes = 0
+
     def find_empty(puzzle):
+        nonlocal explored_nodes
+        explored_nodes += 1
         for i in range(9):
             for j in range(9):
                 if puzzle[i][j] == 0:
@@ -7,6 +11,8 @@ def backtracking(puzzle):
         return None
 
     def is_valid(puzzle, num, pos):
+        nonlocal explored_nodes
+        explored_nodes += 1
         # Check row
         for i in range(9):
             if puzzle[pos[0]][i] == num and pos[1] != i:
@@ -46,5 +52,7 @@ def backtracking(puzzle):
 
         return False
 
-    solve(puzzle)
-    return puzzle
+    if solve(puzzle):
+        return puzzle, explored_nodes
+    else:
+        return None, explored_nodes
