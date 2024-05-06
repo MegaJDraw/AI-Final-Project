@@ -11,9 +11,21 @@ class TestArcConsistency(unittest.TestCase):
         hard_puzzle = generate_sudoku(50)
 
         # Solve the puzzles using arc consistency
-        easy_solution = arc_consistency(easy_puzzle)
-        medium_solution = arc_consistency(medium_puzzle)
-        hard_solution = arc_consistency(hard_puzzle)
+        easy_solution, easy_explored_nodes = arc_consistency(easy_puzzle)
+        medium_solution, medium_explored_nodes = arc_consistency(medium_puzzle)
+        hard_solution, hard_explored_nodes = arc_consistency(hard_puzzle)
+
+        print("Easy solution:")
+        for row in easy_solution:
+            print(row)
+
+        print("Medium solution:")
+        for row in medium_solution:
+            print(row)
+
+        print("Hard solution:")
+        for row in hard_solution:
+            print(row)
 
         # Check if the solutions are valid
         self.assertTrue(is_valid_solution(easy_solution))
