@@ -5,14 +5,20 @@ from sudoku_solver.utils.sudoku_validator import is_valid_solution
 
 class TestArcConsistency(unittest.TestCase):
     def test_arc_consistency(self):
-        # Generate a Sudoku puzzle
-        puzzle = generate_sudoku(30)
+        # Generate Sudoku puzzles of different difficulty levels
+        easy_puzzle = generate_sudoku(30)
+        medium_puzzle = generate_sudoku(40)
+        hard_puzzle = generate_sudoku(50)
 
-        # Solve the puzzle using arc consistency
-        solution = arc_consistency(puzzle)
+        # Solve the puzzles using arc consistency
+        easy_solution = arc_consistency(easy_puzzle)
+        medium_solution = arc_consistency(medium_puzzle)
+        hard_solution = arc_consistency(hard_puzzle)
 
-        # Check if the solution is valid
-        self.assertTrue(is_valid_solution(solution))
+        # Check if the solutions are valid
+        self.assertTrue(is_valid_solution(easy_solution))
+        self.assertTrue(is_valid_solution(medium_solution))
+        self.assertTrue(is_valid_solution(hard_solution))
 
 if __name__ == '__main__':
     unittest.main()
