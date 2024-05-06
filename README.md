@@ -37,12 +37,7 @@ This project implements three constraint satisfaction algorithms—backtracking 
 
 2. The script will generate Sudoku puzzles of different difficulty levels (easy, medium, hard) and solve them using the three constraint satisfaction algorithms.
 
-3. To visualize the solving process, run the GUI script:
-   ```
-   python gui.py
-   ```
-
-4. The GUI will display the Sudoku grid and allow you to step through the solving process for each algorithm.
+3. The GUI will display the Sudoku grid and allow you to step through the solving process for each algorithm.
 
 ## Algorithms
 
@@ -57,11 +52,6 @@ The project implements three constraint satisfaction algorithms for solving Sudo
 ## Visualization
 
 The project includes a graphical user interface (GUI) for visualizing the solving process of the algorithms. The GUI is implemented using the Pygame library and allows users to step through the solving process, observing the assignment of values to cells, the backtracking process, and the consistency checks performed.
-
-To run the GUI, execute the `gui.py` script:
-```
-python gui.py
-```
 
 ## License
 
