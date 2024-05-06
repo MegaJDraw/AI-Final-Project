@@ -65,12 +65,6 @@ To run the GUI, execute the `gui.py` script:
 python gui.py
 ```
 
-## Contributing
-
-Contributions to the Sudoku Solver project are welcome! If you find any issues or have suggestions for improvements, please open an issue or submit a pull request on the GitHub repository.
-
-When contributing, please follow the existing code style and conventions, and make sure to test your changes thoroughly.
-
 ## License
 
 This project is licensed under the [MIT License](LICENSE). Feel free to use, modify, and distribute the code for personal or commercial purposes.
