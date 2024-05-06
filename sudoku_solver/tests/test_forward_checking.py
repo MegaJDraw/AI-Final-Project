@@ -11,9 +11,21 @@ class TestForwardChecking(unittest.TestCase):
         hard_puzzle = generate_sudoku(50)
 
         # Solve the puzzles using forward checking
-        easy_solution = forward_checking(easy_puzzle)
-        medium_solution = forward_checking(medium_puzzle)
-        hard_solution = forward_checking(hard_puzzle)
+        easy_solution, easy_explored_nodes = forward_checking(easy_puzzle)
+        medium_solution, medium_explored_nodes = forward_checking(medium_puzzle)
+        hard_solution, hard_explored_nodes = forward_checking(hard_puzzle)
+
+        print("Easy solution:")
+        for row in easy_solution:
+            print(row)
+
+        print("Medium solution:")
+        for row in medium_solution:
+            print(row)
+
+        print("Hard solution:")
+        for row in hard_solution:
+            print(row)
 
         # Check if the solutions are valid
         self.assertTrue(is_valid_solution(easy_solution))
