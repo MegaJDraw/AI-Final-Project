@@ -1,5 +1,9 @@
 def arc_consistency(puzzle):
+    explored_nodes = 0
+
     def find_empty(puzzle):
+        nonlocal explored_nodes
+        explored_nodes += 1
         for i in range(9):
             for j in range(9):
                 if puzzle[i][j] == 0:
@@ -7,6 +11,8 @@ def arc_consistency(puzzle):
         return None
 
     def is_valid(puzzle, num, pos):
+        nonlocal explored_nodes
+        explored_nodes += 1
         # Check row
         if num in puzzle[pos[0]]:
             return False
@@ -42,5 +48,7 @@ def arc_consistency(puzzle):
 
         return False
 
-    solve(puzzle)
-    return puzzle
+    if solve(puzzle):
+        return puzzle, explored_nodes
+    else:
+        return None, explored_nodes
